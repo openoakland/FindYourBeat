@@ -1,0 +1,105 @@
+Chicago Public Schools divides the city into four ¡®Tiers¡¯ based upon
+socio-economic data and test scores from local elementary schools. The
+way that CPS does this is complicated, so we will first describe how
+that CPS breaks up the city, the variables that CPS uses, and then how
+CPS combines these variables to assign parts of the city to tiers.
+Splitting up the City For the Tiers system, CPS splits up the city
+into census tracts. To protect individual privacy, the U.S. Census
+only publishes data about a large group of people. This group could be
+the people who live in entire United States, Illinois, Chicago, or a
+census tract. Census tracts are small, compared to the City of
+Chicago, and are defined by the U.S. Census Bureau.  In Chicago, the
+median census tract is 1.8 square miles, which is about 115 city
+blocks, but some tracts are much smaller and some are much bigger.
+
+CPS creates a score for every census tract, which determines what Tier
+the tract is. Five of the variables that go into that score come from
+Census data and one variable comes from internal CPS information.
+Census Data Four of the census variables that go into determining a
+Tier are relatively straightforward. They are median family income,
+the percent of household occupied by the owner, the percent of
+families headed by a single parent, and the percent of households
+where a language other than English is spoken. These data are readily
+available from the census, particularly the American Community Survey.
+
+For one census variable, CPS combines other census data to create an
+education score.
+
+The education score is a weighted sum of the fractions of the adult
+population who have achieved different levels of education. Only
+adults older than 25 are counted.
+
+Education Score=1Less than HS Diploma + 2HS Diploma + 3Some College +
+4Bachelors Degree + 5Advanced Degree 5 This produces a scale that
+could range from 0.2, if no one graduated from high school, to 1.0 if
+everyone has a graduate degree.  CPS Data The first version of the
+tier system only used the census variables. In 2010, the Blue Ribbon
+Commission evaluated the system and found that the fewer black
+students were being accepted. They recommended that a measure of
+school performance be added to the tier system. In addition, they also
+recommended that 70% of seats be allocated by tier instead of the
+original 60%.
+
+http://cpsmagnet.org/ourpages/auto/2010/11/18/38613619/BRC%20Final%20Report%209%2022%2010.pdf
+
+The school performance variable is a complicated animal. It is a
+weighted average of schools' ISAT composite scores. Let's start with
+explaining what an ISAT composite score is?
+
+ISAT Composite Score 
+Chicago public elementary students take the
+Illinois Standard Achievement Test (ISAT) every spring from third to
+eighth grade. Every year, the students are tested in reading and math,
+and in grade four and seven they are also tested in science. To make
+the ISAT composite score, CPS looks at all reading, math, and science
+subtests, and calculates the percent of these subtests where a student
+met or exceeded Illinois's learning targets. So a score of 77% would
+mean that 77% of the scores on tests in reading, math, and science met
+or exceeded the state standards.
+
+http://www.isbe.net/assessment/htmls/per_def.htm
+Weighting
+
+Now, for student living in a given tract, CPS knows what schools the
+students go to. To get a school performance variable for a tract, they
+average the schools' ISAT composite scores, weighted by the fraction
+of students attending each school.
+
+So, let's say there were 300 elementary students in a given tract, and
+they all went to one of two schools. A hundred of the students went to
+a school with a composite ISAT score of 75 and 200 students went to a
+school with a composite score of 60.
+
+
+School Performance Variable = 10075 + 20060100 + 200= 65
+
+http://cpsmagnet.org/ourpages/auto/2010/11/18/38613619/SEMagnetAdmissions_Principal_Presentation_draft_110210.pdf
+
+Unlike the other variables, only CPS has the information required to
+calculate this school performance variable.  Creating the Composite
+Score Once CPS has its six variables, it then calculates, for each
+variable, what percentage of tracts has smaller value for that
+variable. It turns an absolute measure into a relative one. Let¡¯s 57%
+of households in a tract are occupied by an owner. We look at all
+tracts, and we find out that 72% of the tracts have a rate of home
+owernships that is lower than 57%. We then say that this tract is in
+the 72nd percentile of tracts in home ownership.
+
+
+Once we have the percentiles for all the variables we calculate a
+composite score:
+
+Composite Score} = Percentile Median Income
+                           + Percentile Home Ownership
+                            + Percentile Education Score}
+                           + (100% - Percentile Single-Parent Family)
+                           + (100% - Percentile Non-English Speaking)
+                           + Percentile School Performance Variable
+
+
+The percentiles for for single-parent families and non-english
+speaking are reversed. For example, we would say that a tract is in
+the 60th percentile for having a non-single parent home, or the 80th
+percentile for having a non-non-english speaking household.
+
+
