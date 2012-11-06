@@ -1,26 +1,26 @@
-Chicago Public Schools divides the city into four ¡®Tiers¡¯ based upon
-socio-economic data and test scores from local elementary schools. The
-way that CPS does this is complicated, so we will first describe how
-that CPS breaks up the city, the variables that CPS uses, and then how
-CPS combines these variables to assign parts of the city to tiers.
-Splitting up the City For the Tiers system, CPS splits up the city
-into census tracts. To protect individual privacy, the U.S. Census
-only publishes data about a large group of people. This group could be
-the people who live in entire United States, Illinois, Chicago, or a
-census tract. Census tracts are small, compared to the City of
-Chicago, and are defined by the U.S. Census Bureau.  In Chicago, the
-median census tract is 1.8 square miles, which is about 115 city
-blocks, but some tracts are much smaller and some are much bigger.
+The school district follows a complicated recipe to assign different parts of
+the city to one of four 'Tiers.'  
+
+The first step is split this city into smaller parts. The school
+district uses N geographic units called census tracts, which are
+defined by the U.S. Census Bureau. Census tracts tend to be big and
+they tend to have a lot of people (give some numbers here).
+We've not been able to find the reason why the school district
+chose census tracts as the  units for the tier system. 
 
 CPS creates a score for every census tract, which determines what Tier
 the tract is. Five of the variables that go into that score come from
-Census data and one variable comes from internal CPS information.
-Census Data Four of the census variables that go into determining a
+Census data and one variable is made from CPS student test scores.
+
+Census Data 
+
+Four of the census variables that go into determining a
 Tier are relatively straightforward. They are median family income,
 the percent of household occupied by the owner, the percent of
 families headed by a single parent, and the percent of households
 where a language other than English is spoken. These data are readily
-available from the census, particularly the American Community Survey.
+available from the census bureau, (particularly the American Community
+Survey llink.
 
 For one census variable, CPS combines other census data to create an
 education score.
@@ -30,12 +30,16 @@ population who have achieved different levels of education. Only
 adults older than 25 are counted.
 
 Education Score=1Less than HS Diploma + 2HS Diploma + 3Some College +
-4Bachelors Degree + 5Advanced Degree 5 This produces a scale that
+4Bachelors Degree + 5Advanced Degree/ 5 This produces a scale that
 could range from 0.2, if no one graduated from high school, to 1.0 if
-everyone has a graduate degree.  CPS Data The first version of the
+everyone has a graduate degree.  
+
+CPS Data 
+
+The first version of the
 tier system only used the census variables. In 2010, the Blue Ribbon
-Commission evaluated the system and found that the fewer black
-students were being accepted. They recommended that a measure of
+Commission evaluated the system and found that fewer black
+students were being accepted. The commision recommended that a measure of
 school performance be added to the tier system. In addition, they also
 recommended that 70% of seats be allocated by tier instead of the
 original 60%.
@@ -76,7 +80,10 @@ School Performance Variable = 10075 + 20060100 + 200= 65
 http://cpsmagnet.org/ourpages/auto/2010/11/18/38613619/SEMagnetAdmissions_Principal_Presentation_draft_110210.pdf
 
 Unlike the other variables, only CPS has the information required to
-calculate this school performance variable.  Creating the Composite
+calculate this school performance variable.  
+
+Creating the Composite
+
 Score Once CPS has its six variables, it then calculates, for each
 variable, what percentage of tracts has smaller value for that
 variable. It turns an absolute measure into a relative one. Let¡¯s 57%
