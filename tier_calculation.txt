@@ -1,6 +1,8 @@
 The school district follows a complicated recipe to assign different parts of
 the city to one of four 'Tiers.'  
 
+http://audio.wbez.org/blog/CPS_desegpolicydeck.pdf
+
 The first step is split this city into smaller parts. The school
 district uses N geographic units called census tracts, which are
 defined by the U.S. Census Bureau. Census tracts tend to be big and
@@ -86,7 +88,7 @@ Creating the Composite
 
 Score Once CPS has its six variables, it then calculates, for each
 variable, what percentage of tracts has smaller value for that
-variable. It turns an absolute measure into a relative one. Let¡¯s 57%
+variable. It turns an absolute measure into a relative one. Letï¿½ï¿½s 57%
 of households in a tract are occupied by an owner. We look at all
 tracts, and we find out that 72% of the tracts have a rate of home
 owernships that is lower than 57%. We then say that this tract is in
