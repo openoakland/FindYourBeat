@@ -1,26 +1,26 @@
 The school district follows a complicated recipe to assign different parts of
 the city to one of four 'Tiers.'  
 
-First, the school district divides up the city into about 800 areas called census tracts.
-These tracts are areas defined by the U.S. Census Bureau for reporting  uses for reporting survey results. 
-On average, a tract is about twenty Chicago blocks and has about three thousand people.
-We've not been able to find the reason why the school district
-chose census tracts as the  units for the tier system. 
+First, the school district divides up the city into about 800 areas called census tracts. These 
+tracts are small areas that the U.S. Census Burea uses for reporting data that the Census only collects
+from a sample of households. The school district uses this sample data when they assign each tract a 
+'Socioeconomic Score'
 
-CPS creates a score for every census tract, which determines what Tier
-the tract is. Five of the numbers that go into that score come from
-Census data and one number is made from CPS student test scores.
+The Census Bureau also reports that data for smaller areas, and we do not know if there is a reason why the
+school district chose census tracts instead of a smaller or larger area. On average a Chicago census tract 
+is about twenty city blocks and has three thousand people.
 
 Census Data 
 
-Four of the census variables that go into determining a
-Tier are relatively straightforward. They are median family income,
+Four of the numbers that go into a tract's 'Socioeconomic Score' are simple and come directly from the Census.
+They are median family income,
 the percent of household occupied by the owner, the percent of
 families headed by a single parent, and the percent of households
-where a language other than English is spoken. These data are readily
-available from the census bureau, 
+where a language other than English is spoken. 
 
-For one census variable, CPS combines other census data to create an
+
+
+For one census variable, CPS combines census data to create an
 education score.
 
 The education score is a weighted sum of the fractions of the adult
@@ -95,7 +95,7 @@ the 72nd percentile of tracts in home ownership.
 Once we have the percentiles for all the variables we calculate a
 composite score:
 
-Composite Score} = Percentile Median Income
+Composite Score = Percentile Median Income
                            + Percentile Home Ownership
                             + Percentile Education Score}
                            + (100% - Percentile Single-Parent Family)
@@ -108,4 +108,7 @@ speaking are reversed. For example, we would say that a tract is in
 the 60th percentile for having a non-single parent home, or the 80th
 percentile for having a non-non-english speaking household.
 
+Quartering
+
+Once there is a composite score for each 
 
