@@ -1,9 +1,9 @@
 The school district follows a complicated recipe to assign different parts of
 the city to one of four 'Tiers.'  
 
-First, the school district splits up the city into about 800 sub-areas called census tracts.
-Census tracts are areas that the U.S. Census Bureau uses for reporting survey results. On average, a tract
-is about twenty Chicago blocks and has about three thousand people.
+First, the school district divides up the city into about 800 areas called census tracts.
+These tracts are areas defined by the U.S. Census Bureau for reporting  uses for reporting survey results. 
+On average, a tract is about twenty Chicago blocks and has about three thousand people.
 We've not been able to find the reason why the school district
 chose census tracts as the  units for the tier system. 
 
