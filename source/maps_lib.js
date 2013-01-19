@@ -1,6 +1,7 @@
 /*!
  * Searchable Map Template with Google Fusion Tables
  * http://derekeder.com/searchable_map_template/
+ * Hacked to work for Oakland ELementary School Zones by @spjika http://stevespiker.com
  *
  * Copyright 2012, Derek Eder
  * Licensed under the MIT license.
@@ -18,22 +19,22 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1suTSp6yMr_ZlKVw_fayo5ovcj960Ysm12wHSmnA",
+  fusionTableId:      "1zzlVg7P8-vT0TAqJHquuKmjrj_Znwr0eNFDT0XY",
   tierDiffTableId:    "1c8_4xQV7Vw21m5kDZqnD7Kz_QCOdrlXyF_RU4gc",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
-  googleApiKey:       "AIzaSyAcsnDc7_YZskPj4ep3jT_fkpB3HI_1a98",
+  googleApiKey:       "AIzaSyBiSQxYlSAn8B4fBNANuiOUDmf0Mv72MAY",
 
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
   locationColumn:     "geometry",
 
-  map_centroid:       new google.maps.LatLng(41.8781136, -87.66677856445312), //center that your map defaults to
-  locationScope:      "chicago",      //geographical area appended to all address searches
-  recordName:         "tier",       //for showing number of results
-  recordNamePlural:   "tiers",
+  map_centroid:       new google.maps.LatLng(37.8044, -122.2697), //center that your map defaults to
+  locationScope:      "oakland",      //geographical area appended to all address searches
+  recordName:         "enrollment zone",       //for showing number of results
+  recordNamePlural:   "enrollment zones",
 
   searchRadius:       0.0001,            //in meters ~ 1/2 mile
   defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
@@ -226,7 +227,7 @@ var MapsLib = {
   },
 
   getTierNumber: function(whereClause) {
-    MapsLib.query("'Tier 2012'", whereClause,"MapsLib.displayTierNumber");
+    MapsLib.query("'zone'", whereClause,"MapsLib.displayTierNumber");
   },
 
   displayTierNumber: function(json) {
@@ -236,47 +237,47 @@ var MapsLib = {
       tier = json["rows"][0];
 
     $( "#tierNumber" ).fadeOut(function() {
-        $( "#tierNumber" ).html("You are in Tier " + tier);
+        $( "#tierNumber" ).html("You are in Zone " + tier);
       });
     $( "#tierNumber" ).fadeIn();
   },
 
-  getTierDemographics: function(tier) {
-    var selectColumns = "AVERAGE('Tier 2012'), "
-    selectColumns += "AVERAGE('Median Family Income'), ";
-    selectColumns += "AVERAGE('Single Parent Families, rate'), ";
-    selectColumns += "AVERAGE('People over Five Years Old who Speak Language other than English at Home, rate'), ";
-    selectColumns += "AVERAGE('Homeowner Occupied Households, rate'), ";
-    selectColumns += "AVERAGE('People over 18 with less than HS Education, rate'), ";
-    selectColumns += "AVERAGE('People over 18 with HS Diploma or Equivalent, rate'), ";
-    selectColumns += "AVERAGE('People over 18 Some Post-HS Education, rate'), ";
-    selectColumns += "AVERAGE('People with a BA Degree or Higher, rate') ";
+ * getTierDemographics: function(tier) {
+*    var selectColumns = "AVERAGE('Tier 2012'), "
+*   selectColumns += "AVERAGE('Median Family Income'), ";
+*    selectColumns += "AVERAGE('Single Parent Families, rate'), ";
+*    selectColumns += "AVERAGE('People over Five Years Old who Speak Language other than English at Home, rate'), ";
+*   selectColumns += "AVERAGE('Homeowner Occupied Households, rate'), ";
+*    selectColumns += "AVERAGE('People over 18 with less than HS Education, rate'), ";
+*    selectColumns += "AVERAGE('People over 18 with HS Diploma or Equivalent, rate'), ";
+*    selectColumns += "AVERAGE('People over 18 Some Post-HS Education, rate'), ";
+*    selectColumns += "AVERAGE('People with a BA Degree or Higher, rate') ";
 
-    var whereClause = "'Tier 2012' = " + tier;
-    MapsLib.query(selectColumns, whereClause,"MapsLib.displayTierDemographics");
-  },
+*    var whereClause = "'zone' = " + tier;
+*    MapsLib.query(selectColumns, whereClause,"MapsLib.displayTierDemographics");
+*  },
 
-  displayTierDemographics: function(json) {
-    MapsLib.handleError(json);
-    var table = "";
-    var rows = json["rows"];
-    var cols = json["columns"];
-    var tier = rows[0][0];
+*  displayTierDemographics: function(json) {
+*    MapsLib.handleError(json);
+*    var table = "";
+*    var rows = json["rows"];
+*    var cols = json["columns"];
+*    var tier = rows[0][0];
 
 
-    if (rows != null) {
-      table += "<td><strong>Tier&nbsp;" + tier + "</strong></td>";
-      table += "<td id='tier-" + tier + "-income'>" + rows[0][1] + "</td>";
+*    if (rows != null) {
+*      table += "<td><strong>Tier&nbsp;" + tier + "</strong></td>";
+*      table += "<td id='tier-" + tier + "-income'>" + rows[0][1] + "</td>";
 
-      for(i = 2; i < cols.length; i++) {
-        table += "<td>" + MapsLib.toPercentage(rows[0][i]) + "</td>";
-      }
-     }
+*      for(i = 2; i < cols.length; i++) {
+*        table += "<td>" + MapsLib.toPercentage(rows[0][i]) + "</td>";
+*      }
+*     }
 
      //console.log("tier-" + response.getDataTable().getValue(0, 0) + "-demographics")
-     $("#tier-" + tier + "-demographics").html(table);
-     $("#tier-" + tier + "-income").formatCurrency({roundToDecimalPlace: 0});
-  },
+*     $("#tier-" + tier + "-demographics").html(table);
+*     $("#tier-" + tier + "-income").formatCurrency({roundToDecimalPlace: 0});
+*  },
 
   addCommas: function(nStr) {
     nStr += '';
