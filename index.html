@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Oakland Elementary School Enrollment Zones</title>
+<title>Oakland Elementary School Zones</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="source/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script src="source/jquery.address.min.js" type="text/javascript"></script>
-<script src="source/maps_lib.js" type="text/javascript"></script>
+<script src="source/maps_lib.js?2" type="text/javascript"></script>
 <script src="source/jquery.ezpz_hint.min.js" type="text/javascript"></script>
-<script src="source/fusiontips.js" type="text/javascript"></script>
+<script src="source/fusiontips.js?1" type="text/javascript"></script>
 <script src="source/analytics_lib.js" type="text/javascript"></script>
 
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
@@ -38,15 +38,17 @@
 				<li>Home</li>
 				<li><a href='about.html'>About</a></li>
 			</ul>
-			<h1>Oakland Elementary School Zones <span>an <a href='http://infoalamedacounty.org'>InfoAlamedaCounty</a> app</span></h1>
+			<h1>Oakland Elementary School Zones <span>an <a href='http://openoakland.org'>OpenOakland</a> app</span></h1>
 			<hr />
 			<div class="content-secondary">
 
 				<div id='search'>
-					<p>In Oakland, a student may attend an Elementary School in their zone,  based on where he or she lives.</p>
-					<p>The Option Enrollment <a href='http://www.ousd.k12.ca.us/enroll'>system</a> allows you to apply to any school in the district, however your residence can <a href=:'http://www.ousd.k12.ca.us/enroll'>qualify</a> you for your local school.</p>
+				<p>In Oakland, a student may attend an Elementary School in their zone, based on where he or she lives.</p>
+				<p>The Option Enrollment <a href='http://www.ousd.k12.ca.us/enroll'>system</a> allows you to apply to any school in the district, however your residence can <a href=:'http://www.ousd.k12.ca.us/enroll'>qualify</a> you for your local school.</p>
 
-					<p>This tool <a href='about.html#disclaimer'>helps</a> you find what Enrollment Zone you are in.</p>
+
+					<p>This tool <a href='about.html#disclaimer'>helps</a> you find what elementary school zone you are in.</p>
+
 
 					<h4>What zone am I in? <span>(<a href='#' onclick="MapsLib.findMe(); return false;">find me</a>)</span></h4>
 				  <p><input class='txt hint' type="text" title="Enter an address &hellip;" id="txtSearchAddress" onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()"/></p>
@@ -56,10 +58,11 @@
 					<span id="tierNumber"></span>
 					<hr />
 
-					<p>Let us know what you think!<br/><a href='mailto:it@urbanstrategies.org'>Send us feedback</a> or Tweet us at <a href='http://twitter.com/infoalameda'>@infoalameda</a></p>
+
+					<p>Let us know what you think!<br/><a href='mailto:openoakland@gmail.com'>Send us feedback</a> or Tweet us at <a href='http://twitter.com/openoakland'>@openoakland</a></p>
 					<hr />
-					<p class='mute'>Download the raw data <a href='https://www.google.com/fusiontables/data?docid=1zzlVg7P8-vT0TAqJHquuKmjrj_Znwr0eNFDT0XY#rows:id=1>here</a>.</p>
-					<p class='mute'>An <a href='http://infoalamedacounty.org'>InfoAlamedaCounty</a> app by <a href='http://stevespiker.com'>Spike</a>, based on the OpenSource app from <a href='http://opencityapps.org/'> Open City Apps</a></a>.</p>
+					<p class='mute'>Download the raw data <a href='https://www.google.com/fusiontables/data?docid=1zzlVg7P8-vT0TAqJHquuKmjrj_Znwr0eNFDT0XY'>here</a>.</p>
+					<p class='mute'>An <a href='http://openoakland.org'>OpenOakland</a> app by <a href='http://stevespiker.com'>Steve Spiker</a>, based on an opensource project by <a href='http://opencity.org/'>Open City</a>.</p>
 				</div>
 			</div>
 			<div class="content-primary">
