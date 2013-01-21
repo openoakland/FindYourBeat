@@ -236,7 +236,7 @@ var MapsLib = {
       tier = json["rows"][0];
 
     $( "#tierNumber" ).fadeOut(function() {
-        $( "#tierNumber" ).html("You are in the " + tier " Zone " );
+        $( "#tierNumber" ).html("You are in the zone for" + tier);
       });
     $( "#tierNumber" ).fadeIn();
   },
