@@ -54,7 +54,7 @@ var MapsLib = {
 //adding new schools layer fro fusion table
 var layerz = new google.maps.FusionTablesLayer({
   query: {
-    select: 'latitude',
+    select: 'street',
     from: '1vFge162nQNKIaLIKati1K4860hipj_LXRNcF79w'
   },
 });
