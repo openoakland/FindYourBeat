@@ -51,6 +51,17 @@ var MapsLib = {
     };
     map = new google.maps.Map($("#map_canvas")[0],myOptions);
 
+//adding new schools layer fro fusion table
+var layerz = new google.maps.FusionTablesLayer({
+  query: {
+    select: 'latitude',
+    from: '1vFge162nQNKIaLIKati1K4860hipj_LXRNcF79w'
+  },
+});
+layerz.setMap(map);
+
+//end new school layer
+
     MapsLib.searchrecords = null;
 
     //reset filters
@@ -236,7 +247,7 @@ var MapsLib = {
       tier = json["rows"][0];
 
     $( "#tierNumber" ).fadeOut(function() {
-        $( "#tierNumber" ).html("You are in the zone for" + tier);
+        $( "#tierNumber" ).html("You are in the zone for " + tier);
       });
     $( "#tierNumber" ).fadeIn();
   },
