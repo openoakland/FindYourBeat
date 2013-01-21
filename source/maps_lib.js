@@ -52,13 +52,12 @@ var MapsLib = {
     map = new google.maps.Map($("#map_canvas")[0],myOptions);
 
 //adding new schools layer fro fusion table
-var layerz = new google.maps.FusionTablesLayer({
+var layeres = new google.maps.FusionTablesLayer({
   query: {
     select: 'street',
     from: '1vFge162nQNKIaLIKati1K4860hipj_LXRNcF79w'
   },
 });
-layerz.setMap(map);
 
 //end new school layer
 
