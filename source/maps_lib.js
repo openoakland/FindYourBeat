@@ -18,7 +18,7 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1zzlVg7P8-vT0TAqJHquuKmjrj_Znwr0eNFDT0XY",
+  fusionTableId:      "1VTHj1S7DH3DC8aXG0WMtsWK8EOfGSDP9X_8U52w",
   tierDiffTableId:    "1c8_4xQV7Vw21m5kDZqnD7Kz_QCOdrlXyF_RU4gc",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
@@ -31,13 +31,13 @@ var MapsLib = {
   locationColumn:     "geometry",
 
   map_centroid:       new google.maps.LatLng(37.8044, -122.2697), //center that your map defaults to
-  locationScope:      "oakland",      //geographical area appended to all address searches
-  recordName:         "zone",       //for showing number of results
-  recordNamePlural:   "zones",
+  locationScope:      "Oakland, California",      //geographical area appended to all address searches
+  recordName:         "community police beat",       //for showing number of results
+  recordNamePlural:   "community police beats",
 
   searchRadius:       0.0001,            //in meters ~ 1/2 mile
-  defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
-  addrMarkerImage: 'http://derekeder.com/images/icons/blue-pushpin.png',
+  defaultZoom:        12,             //zoom level when map is loaded (bigger is more zoomed in)
+  addrMarkerImage: 'http://www.infoalamedacounty.org/images/opd.png',
   currentPinpoint: null,
 
   initialize: function() {
@@ -207,7 +207,7 @@ var layeres = new google.maps.FusionTablesLayer({
 
   enableMapTips: function () {
     MapsLib.searchrecords.enableMapTips({
-      select: "zone",
+      select: "CP_BEAT",
       from: MapsLib.fusionTableId,
       geometryColumn: MapsLib.locationColumn,
       googleApiKey: MapsLib.googleApiKey,
@@ -236,7 +236,7 @@ var layeres = new google.maps.FusionTablesLayer({
   },
 
   getTierNumber: function(whereClause) {
-    MapsLib.query("zone", whereClause,"MapsLib.displayTierNumber");
+    MapsLib.query("CP_BEAT", whereClause,"MapsLib.displayTierNumber");
   },
 
   displayTierNumber: function(json) {
@@ -246,7 +246,7 @@ var layeres = new google.maps.FusionTablesLayer({
       tier = json["rows"][0];
 
     $( "#tierNumber" ).fadeOut(function() {
-        $( "#tierNumber" ).html("You are in the zone for " + tier);
+        $( "#tierNumber" ).html("You are in Community Police Beat " + tier);
       });
     $( "#tierNumber" ).fadeIn();
   },
