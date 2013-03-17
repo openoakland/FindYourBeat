@@ -5,7 +5,7 @@
  +-------------------------------------------------------------------*/
 
  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-29779186-1']);
+  _gaq.push(['_setAccount', 'UA-35908939-2']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -16,7 +16,7 @@
   
   _trackClickEventWithGA = function (category, action, label) {
 		if (typeof(_gaq) != 'undefined')
-      _gaq.push(['_setAccount', 'UA-29779186-1']);
+      _gaq.push(['_setAccount', 'UA-35908939-2']);
 			_gaq.push(['_trackEvent', category, action, label]);
 	};
  
